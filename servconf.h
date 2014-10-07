@@ -178,6 +178,7 @@ typedef struct {
 	char   *trusted_user_ca_keys;
 	char   *authorized_principals_file;
 	char   *authorized_keys_command;
+	uid_t	authorized_keys_command_owner;
 	char   *authorized_keys_command_user;
 
 	int64_t rekey_limit;

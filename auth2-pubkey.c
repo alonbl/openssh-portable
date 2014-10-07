@@ -561,8 +561,8 @@ user_key_command_allowed2(struct passwd *user_pw, Key *key)
 		    options.authorized_keys_command, strerror(errno));
 		goto out;
 	}
-	if (auth_secure_path(options.authorized_keys_command, &st, NULL, 0,
-	    errmsg, sizeof(errmsg)) != 0) {
+	if (auth_secure_path(options.authorized_keys_command, &st, NULL,
+	    options.authorized_keys_command_owner, errmsg, sizeof(errmsg)) != 0) {
 		error("Unsafe AuthorizedKeysCommand: %s", errmsg);
 		goto out;
 	}

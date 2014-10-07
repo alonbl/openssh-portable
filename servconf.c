@@ -155,6 +155,7 @@ initialize_server_options(ServerOptions *options)
 	options->adm_forced_command = NULL;
 	options->chroot_directory = NULL;
 	options->authorized_keys_command = NULL;
+	options->authorized_keys_command_owner = geteuid();
 	options->authorized_keys_command_user = NULL;
 	options->revoked_keys_file = NULL;
 	options->trusted_user_ca_keys = NULL;
